@@ -1,4 +1,5 @@
 import './style.css'
+import {Drink} from '../Drink'
 export const Menu =(props)=>{
 return(
 <section id="menu" className="menu">
@@ -7,8 +8,25 @@ return(
           <p className="menu-intro">
             Vyberte si z našeho interaktivního menu a nemusíte čekat na obsluhu
           </p>
-          <div className="drinks-list">
-            <div className="drink">
+            <div className="drinks-list">
+              <Drink
+              id={0}
+              name="Romano"
+              ordered={false}
+              image="/cups/espresso.png"
+              layers={[
+                {
+                  color: '#fbdf5b',
+                  label: 'citrón',
+                },
+                {
+                  color: '#613916',
+                  label: 'espresso',
+                },
+              ]}
+            />
+
+          {/* <div className="drink">
               <div className="drink__product">
                 <div className="drink__cup">
                   <img src="/cups/espresso.png" />
@@ -44,11 +62,11 @@ return(
               <div className="drink__controls">
                 <button className="order-btn">
                   Objednat
-                </button>
-              </div>
-            </div>
+                </button> */} 
+              {/* </div>
+            </div> */}
 
-            <div className="drink">
+            {/* <div className="drink">
               <div className="drink__product">
                 <div className="drink__cup">
                   <img src="/cups/lungo.png" />
@@ -66,16 +84,21 @@ return(
                 </div>
               </div>
               <div className="drink__controls">
+              <form>
                 <button className="order-btn">
+
                   Objednat
                 </button>
+                <input type="hidden" value={id}/>
+              </form>
               </div>
-            </div>
-          </div>
+            </div>*/}
+          </div> 
 
           <div className="order-detail">
             <a href="/objednavka">Detail objednávky</a>
           </div>
         </div>
       </section>
+    
 )}
